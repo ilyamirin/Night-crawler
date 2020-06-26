@@ -21,8 +21,10 @@ def opinion_part_filter(text,main):
             continue
     return False
 
-def conclusion_filter(text,conclusion):
+def conclusion_filter(text,conclusion,stop = True):
     #Фильтр заключению. Необходимо наличие клише в конце текста, но не в начале
+    if stop:
+        return True
     for c in conclusion:
         if c in text[:len(text) // 2].lower():
             return False
@@ -60,7 +62,7 @@ def words_filter(texts,cliches,conclusion,main):
         else:
             occur = words_occur(text,cliches)
             if occur > MIN_OCC: # Текст прошёл фильтрацию на количество слов
-                if opinion_part_filter(text,main) and conclusion_filter(text, conclusion):
+                if opinion_part_filter(text,main) and conclusion_filter(text, conclusion, stop = True):
                     filtered_texts.append(text)
                     ind = current_text_ind[-1] + 1
                     current_text_ind = []
