@@ -73,4 +73,5 @@ def check_text(text):
                 else:
                     text = text.replace('\xa0','').replace('\t','')
                     filtered_text.append(text)
+    filtered_text = remove_repeats(filtered_text)
     return filtered_text
