@@ -46,7 +46,10 @@ def remove_repeats(texts):
     for i in range(len(texts)):
         if i not in indexes_for_remove:
             result.append(texts[i])
-    f_result = [result[0]]
+    try:
+        f_result = [result[0]]
+    except:
+        return []
     for i in range(1,len(result)):
         try:
             result[:i].index(result[i])

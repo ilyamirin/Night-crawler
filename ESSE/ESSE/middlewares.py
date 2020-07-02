@@ -6,8 +6,6 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from stem import Signal
-from stem.control import Controller
 
 
 class EsseSpiderMiddleware:
@@ -66,9 +64,7 @@ class EsseDownloaderMiddleware:
     @classmethod
     def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
-        s = cls()
-        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
-        return s
+        return None
 
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader

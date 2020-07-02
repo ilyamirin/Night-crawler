@@ -1,7 +1,7 @@
 import re
 #%%
 
-MAX_WORDS = 280
+MAX_WORDS = 300
 MIN_WORDS = 150
 MIN_OCC = 3
 
