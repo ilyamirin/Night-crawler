@@ -61,10 +61,9 @@ class EsseDownloaderMiddleware:
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
 
-    @classmethod
-    def from_crawler(cls, crawler):
+    #def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
-        return None
+     #   return None
 
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
